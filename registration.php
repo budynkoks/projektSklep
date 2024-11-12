@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="css/style1.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
-    <script src="js/scripts.js"></script> 
-   
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<?php require("include/header.php");?>
 <?php
- require("include/db.php");
- if (isset($_POST["username"])) {
- $username = $_POST["username"];
- $password = $_POST["password"];
+ require("db.php");
+ if (isset($_POST["login"])) {
+ $login = $_POST["login"];
+ $haslo = $_POST["haslo"];
  $email = $_POST["email"];
  
 
- $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '" . md5($password) .
+ $sql = "INSERT INTO uzytkownicy (login, haslo, email) VALUES ('$login', '" . md5($haslo) .
 "', '$email')";
  $result = $conn->query($sql);
  if ($result) {
@@ -34,23 +30,21 @@
 href='registration.php'>rejestracji</a>.</p>
  </div>";
  }
- }
+ } else {
 ?>
-<div class="form-container">
  <form class="form" action="" method="post">
- <h1 class="username-title">Rejestracja</h1>
- <input type="text" class="username-input" name="username" placeholder="username" required/>
- <input type="password" class="username-input" name="password" placeholder="Hasło"
+ <h1 class="login-title">Rejestracja</h1>
+ <input type="text" class="login-input" name="login" placeholder="Login" required/>
+ <input type="password" class="login-input" name="haslo" placeholder="Hasło"
 required/>
- <input type="text" class="username-input" name="email" placeholder="Adres email"
+ <input type="text" class="login-input" name="email" placeholder="Adres email"
 required/>
- <input type="submit" name="submit" value="Zarejestruj się" class="username-button">
+ <input type="submit" name="submit" value="Zarejestruj się" class="login-button">
  <p class="link"><a href="login.php">Zaloguj się</a></p>
  </form>
-</div>
-
+<?php
+ }
+?>
     
 </body>
 </html>
-
-<?php require("include/footer.php"); ?>
