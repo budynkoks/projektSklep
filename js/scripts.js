@@ -48,6 +48,14 @@ $(document).ready(function() {
     $(".close").on("click", function() {
         $("#lightbox").fadeOut();
     });
+    $('#contactForm').on('submit', function(event) {
+        const userId = $('input[name="idUser"]').val();
+        if (!userId) {
+            event.preventDefault();
+            alert("Proszę się zalogować przed wysłaniem wiadomości.");
+            window.location.href = "login.php";
+        }
+    });
 
     
    
