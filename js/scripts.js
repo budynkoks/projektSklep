@@ -14,20 +14,7 @@ $(document).ready(function() {
         });
     });
    
-    $('#orderForm').submit(function(event) {
-        event.preventDefault(); 
-    
-      
-        $.post('place_order.php', $(this).serialize(), function(response) {
-            
-            if (response.success) {
-                alert("Twoje zamówienie zostało złożone pomyślnie. Numer zamówienia: " + response.order_id);
-                
-            }
-        }).fail(function() {
-            alert("Wystąpił błąd podczas wysyłania zamówienia.");
-        });
-    });
+   
     $(".thumbnail").on("click", function() {
         const newSrc = $(this).attr("src");
         $("#mainImage").attr("src", newSrc);
@@ -52,7 +39,7 @@ $(document).ready(function() {
         const userId = $('input[name="idUser"]').val();
         if (!userId) {
             event.preventDefault();
-            alert("Proszę się zalogować przed wysłaniem wiadomości.");
+            alert("Proszę się zalogować.");
             window.location.href = "login.php";
         }
     });
