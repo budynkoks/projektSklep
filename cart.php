@@ -67,7 +67,7 @@ $isCartEmpty = ($result->num_rows === 0);
                 <?php endwhile; ?>
             </table>
 
-            <form action="checkout.php" method="post">
+            <form action="checkout.php" method="post" id="contactForm">
                 <button type="submit" class="checkout-btn" <?php echo $isCartEmpty ? 'disabled' : ''; ?>>Do kasy</button>
             </form>
         <?php endif; ?>
