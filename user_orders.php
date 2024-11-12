@@ -39,6 +39,7 @@ $result = $stmt->get_result();
                 <p>Adres dostawy: <?php echo htmlspecialchars($order['orderDetails']); ?></p>
                 <p>Numer telefonu: <?php echo htmlspecialchars($order['phoneNumber']); ?></p>
                 <p>Email: <?php echo htmlspecialchars($order['email']); ?></p>
+                <p>Sposób zapłaty: Za pobraniem</p>
 
                
                 <?php
