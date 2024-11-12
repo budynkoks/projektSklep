@@ -8,12 +8,12 @@
     <title>Kontakt</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js"></script> 
 </head>
 <body>
     <div class="container">
         <div class="contact-wrapper">
-            <form action="send_message.php" method="post" class="contact-form">
+            <form action="send_message.php" method="post" class="contact-form" id="contactForm">
                 <input type="hidden" name="idUser" value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : ''; ?>">
 
                 <?php if (isset($_SESSION['email'])): ?>
@@ -55,6 +55,7 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
 
