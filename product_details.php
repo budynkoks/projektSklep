@@ -53,7 +53,7 @@ $isInWishlist = $wishlistResult->num_rows > 0;
         </a>
         
         <div class="product-buttons">
-            <form action="add_to_cart.php" method="post">
+            <form action="add_to_cart.php" method="post" id="contactForm">
                 <input type="hidden" name="product_id" value="<?php echo $id; ?>">
                 <input type="hidden" name="price" value="<?php echo htmlspecialchars($row->price); ?>">
                 <button type="submit" name="add_to_cart">Dodaj do koszyka</button>
@@ -80,9 +80,9 @@ $isInWishlist = $wishlistResult->num_rows > 0;
     </div>
     
     <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
+        <span class="close">&times;</span> 
         <img class="lightbox-content" id="lightboxImage">
-    </div>
+    </div> 
 
     <p><strong>Opis:</strong> <?php echo htmlspecialchars($row->description); ?></p>
     <p><strong>Wysokość:</strong> <?php echo htmlspecialchars($row->height); ?> cm</p>
@@ -99,7 +99,7 @@ $isInWishlist = $wishlistResult->num_rows > 0;
     <?php if (isset($_SESSION["username"])): ?>
     <div class="question-form">
         <h3>Zadaj pytanie o produkt</h3>
-        <form action="send_message.php" method="post">
+        <form action="send_message.php" method="post" id="contactForm">
             <label for="subject">Temat:</label>
             <input type="text" name="subject" id="subject" placeholder="Wpisz temat pytania..." required><br>
             
