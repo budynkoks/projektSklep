@@ -68,6 +68,7 @@ $isCartEmpty = ($result->num_rows === 0);
             </table>
 
             <form action="checkout.php" method="post" id="contactForm">
+                <input type="hidden" name="idUser" value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : ''; ?>">
                 <button type="submit" class="checkout-btn" <?php echo $isCartEmpty ? 'disabled' : ''; ?>>Do kasy</button>
             </form>
         <?php endif; ?>
